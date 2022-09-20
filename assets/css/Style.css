@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #312E2B;
+}
+
+
+.chessboard{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    box-shadow: 10px 0px 10px -10px rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+}
+
+.chessboard > .chessboard-square{
+    width: calc(500px / 8);
+    height: calc(500px / 8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chessboard > .chessboard-square[role="white"]{
+    background: #779556;
+}
+
+.chessboard > .chessboard-square[role="black"]{
+    background: #EBECD0;
+}
+
+.chessboard > .chessboard-square:nth-child(1){
+    border-top-left-radius: 25px;
+}
+
+.chessboard > .chessboard-square:nth-child(8){
+    border-top-right-radius: 25px;
+}
+
+.chessboard > .chessboard-square:nth-child(57){
+    border-bottom-left-radius: 25px;
+}
+
+.chessboard > .chessboard-square:nth-child(64){
+    border-bottom-right-radius: 25px;
+}
+
+.chessboard > .chessboard-square::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #BEC5A3;
+    position: absolute;
+    opacity: 0.50;
+    visibility: hidden;
+}
+
+.chessboard > .chessboard-square.move::before{
+    visibility: visible;
+}
+
+.chessboard > .chessboard-square.enemy::before{
+    visibility: visible;
+}
+
+.chessboard > .chessboard-square.castling::before{
+    visibility: visible;
+}
+
+.chessboard > .chessboard-square.from{
+    background: #bd5c6c; 
+}
+
+.chessboard > .chessboard-square.to{
+    background: #e27587;
+}
+
+.chessboard > .chessboard-square > img.chessboard-piece{
+    max-width: 50px;
+    width: 50px;
+    height: auto;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.chessboard > .chessboard-square > img.chessboard-piece:active{
+    cursor: grabbing;
+}
+
+.player-card{
+    padding: 2.5px 25px;
+    display: flex;
+    position: relative;
+}
+
+.player-card > .rows{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.player-card > .row-1{
+    cursor: pointer;
+    border-radius: 6px;
+    margin:2.5px;
+}
+
+.player-card > .row-1 > .icon {
+    width:30px;
+    height:30px;
+    margin: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.player-card > .row-1 > .text{
+    margin: 0px 5px;
+    color: #ffffff;
+}
+
+.player-card > .row-1 > .text > .status span{
+    font-size: 12px;
+}
+
+.player-card.player-1 > .row-1{
+    justify-content: flex-end;
+}
+
+.player-card.player-2 > .row-2{
+    justify-content: flex-end;
+}
+
+.player-card.player-1 > .row-2 > .timer{
+    text-align: left;
+}
+
+.player-card.player-2 > .row-2 > .timer{
+    text-align: right
+}
+
+.player-card > .row-2 > .timer{
+    padding: 10px;
+    background: #52504E;
+    border-radius: 6px;
+    margin: 5px 0px;
+    width: 80px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.player-card > .row-2 > .timer > span{
+    color: #ebeeee;
+    font-weight: 600;
+    font-size: 18px;
+    user-select: none;
+}
+
+.player-card > .row-2 > .timer.timeout{
+    background: #9E4F4C;
+}
+
+.player-card > .row-2 > .timer > span{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 70px;
+  margin-right: 10px;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 5px 2px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 20px;
+    min-width: 130px;
+  }
+}
+
+

@@ -1,0 +1,11 @@
+[
+	{ "piece": "wp4", "from": "e2", "to": "e4" },
+	{ "piece": "bp4", "from": "e7", "to": "e5" },
+	{ "piece": "wn1", "from": "g1", "to": "f3" },
+	{ "piece": "bn0", "from": "b8", "to": "c6" },
+	{ "piece": "wb1", "from": "f1", "to": "b5" },
+	{ "piece": "bn1", "from": "g8", "to": "f6" },
+	{ "piece": "wn0", "from": "b1", "to": "c3" },
+	{ "piece": "bp3", "from": "d7", "to": "d5" },
+	{ "piece": "wk0", "from": "e1", "to": "g1" }
+]

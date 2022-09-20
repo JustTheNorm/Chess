@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Game</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <script src="./script.js"></script>
-</head>
-<body>
-    <div id="parent">
-        <div class="player-card player-2">
-            <div class="rows row-1">
-                <div class="icon"></div>
-                <div class="text">
-                    <div class="headline"><h4>Player 1</h4></div>
-                    <div class="status">
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="rows row-2">
-                <div class="timer">
-                    <span>00:00</span>
-                </div>
-            </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Chess Game</title>
 
-        </div>
-        <div id="chessboard" class="chessboard"></div>
+		<!-- StyleSheet -->
+		<link rel="stylesheet" href="./assets/css/Style.css" />
+	</head>
+	<body>
+		<div id="parent">
+			<div class="player-card player-2">
+				<div class="rows row-1">
+					<div class="icon"></div>
+					<div class="text">
+						<div class="headline"><h4>Player 1</h4></div>
+						<div class="status">
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<div class="rows row-2">
+					<div class="timer">
+						<span>00:00</span>
+					</div>
+				</div>
+			</div>
 
-        <div class="player-card player-1">
-            <div class="rows row-2">
-                <div class="timer">
-                    <span>00:00</span> 
-                </div>
-            </div>
-            <div class="rows row-1"></div>
-                <div class="icon"></div>
-                <div class="text">
-                    <div class="headline"><h4>Player 1</h4></div>
-                    <div class="status"></div>
-        </div>
+			<div id="chessboard" class="chessboard"></div>
 
-
-    </div>
-
-    
-</body>
+			<div class="player-card player-1">
+				<div class="rows row-2">
+					<div class="timer">
+						<span>00:00</span>
+					</div>
+				</div>
+				<div class="rows row-1">
+					<div class="icon"></div>
+					<div class="text">
+						<div class="headline"><h4>Player 1</h4></div>
+						<div class="status">
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="button-64" role="button"><span class="text">Rematch</span></button>
+		<!-- Javascript -->
+		<script src="./assets/javascript/javascript/Script.js"></script>
+	</body>
 </html>
