@@ -600,7 +600,7 @@ class Piece {
 
 	// castling
 	castling() {
-		// castling only if it is king
+		// castling only if it is King
 		if (this.info.name != "King") return false;
 		console.log("iam here")
 		const game = this.game;
