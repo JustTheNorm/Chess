@@ -7,9 +7,6 @@ class Chess {
 		this.setDefault();
 	}
 
-	
-	
-	
 	// set chess info as default
 	setDefault() {
 		this.info = {
@@ -49,8 +46,8 @@ class Chess {
 	async assignPlayers() {
 		// will return a promise
 		return new Promise((resolve) => {
-			const player1 = new Player({ username: "Norm", id: 1, role: "white" }); // player 1
-			const player2 = new Player({ username: "Magnus", id: 2, role: "black" }); // player 2
+			const player1 = new Player({ username: "Player 1", id: 1, role: "white" }); // player 1
+			const player2 = new Player({ username: "Player 2", id: 2, role: "black" }); // player 2
 
 			this.data.players = [player1, player2]; // assign into the game players
 
@@ -308,7 +305,6 @@ class Chess {
 		}
 	}
 }
-
 
 // Chess Board
 class Board {
@@ -585,8 +581,7 @@ class Piece {
 		const board = this.game.data.board;
 
 		// make sure it is Square object
-		square = board.filterSquare(square);
-
+		square = board.filterSquare(square)
 		// set first to false
 		square.piece = false;
 		piece.square.piece = false;
@@ -602,7 +597,7 @@ class Piece {
 	castling() {
 		// castling only if it is King
 		if (this.info.name != "King") return false;
-		console.log("iam here")
+	
 		const game = this.game;
 		const board = game.data.board.data;
 		const { x, y } = this.square.info.boardPosition;
@@ -619,14 +614,14 @@ class Piece {
 		
 		// right and left rook
 		const rr = board[y][x + 1].piece;
-		const lr = board[y][x - 3].piece;
+		const lr = board[y][x - 2].piece;
 		// console.log(lr)
 		// console.log("hello")
 		// console.dir(board[y][x-2].piece)
 		// check each rook
 		check(rr, board[y][x - 1], rr && rr.info.name == "Rook");
 		check(lr, board[y][x + 1], lr && lr.info.name == "Rook");
-		console.log(board)
+		
 	}
 
 	create() {
@@ -739,7 +734,7 @@ class Piece {
 		const player = this.player; // the turning player
 		const role = player.data.role; // player role values(white, black)
 		const game = this.game; // the game
-		const gameboard = game.data.board; // gameboard
+		const gameboard = game.data.board; // game board
 		const board = gameboard.data; // and the board data
 		const pos = { moves: [], enemies: [], castling: [] }; // possibilities object
 		let { x, y } = square.info.boardPosition; // square position into board
@@ -809,11 +804,10 @@ class Piece {
 						const rightrook = board[ny][nx + 1].piece;
 						const leftrook = board[ny][nx - 1].piece;
 
-						console.dir(rightrook)
 						
 						check(rightrook && rightrook.info.name == "Rook");
 						check(leftrook && leftrook.info.name == "Rook");
-						console.log(board)
+						
 					}
 
 					pos.moves.push(square);
@@ -1017,15 +1011,6 @@ class Square {
 			: element.classList.remove(classname);
 	}
 }
-const reset = document.querySelector(".button-64");
-	reset.addEventListener("click", resetGame);
-
-	function resetGame (){
-		location.reload()
-	}
-
-
-
 
 // Player
 class Player {
@@ -1226,6 +1211,12 @@ class Player {
 		this.update();
 	}
 }
+const reset = document.querySelector(".button-64");
+reset.addEventListener("click", resetGame);
+
+	function resetGame (){
+		location.reload()
+	}
 
 const Game = new Chess(); // game
 
