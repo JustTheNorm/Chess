@@ -1,12 +1,19 @@
-# Chess Game
+# Chess
+1. The aim of chess is to checkmate your opponent’s king.
+2. Familiarize yourself with the basics by going over how each piece moves.
+3. White always goes first.
+4. Game is over when king is captured by enemy player or if your time runs out.
+
 
 ## Description
-Small simple chess game using HTML, CSS, Javascript
+simple chess game using HTML, CSS, Javascript. 
+
+-not finished still missing features
 
 ---
 
 ## Images
-![]()
+![Ui](./assets/media/pieces/chessgame.PNG)
 
 ---
 
@@ -24,3 +31,5 @@ Small simple chess game using HTML, CSS, Javascript
     - allow users to pick a username
     - fix castling on Queen side of board
     - add ability for En pessant for pawns
+    - add draw feature to allow for draws in close games or the ability to offer a draw to the opposing player.
+    - ability to invite a friend using a unique url for multiplayer match.
